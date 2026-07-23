@@ -25,6 +25,7 @@ const init = async () => {
         const response = request.response;
 
         if (response.isBoom) {
+        console.error('Error asli:', response.message);
             if (response.output.statusCode === 413) {
                 return h.response({
                     status: 'fail',
